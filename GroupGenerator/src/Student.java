@@ -17,6 +17,14 @@ public class Student
 			{
 				return lastName;
 			}
-		
+		public int firstGroup() {
+			return groups[0];
+		}
+		public int secondGroup() {
+			return groups[1];
+		}
+		public int thirdGroup() {
+			return groups[2];
+		}
 
 	}
