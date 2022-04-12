@@ -3,6 +3,7 @@ import java.io.*;
 public class Main
 	{
 
+
 		public static void main(String[] args) throws IOException
 					{
 						readTxt();
@@ -20,7 +21,7 @@ public class Main
 									
 								//add each to arraylist
 							}
-			}
+
 		}
 
-	
+}
