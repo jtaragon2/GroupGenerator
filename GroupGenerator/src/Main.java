@@ -3,7 +3,8 @@ import java.io.*;
 public class Main
 	{
 
-
+		static ArrayList <Student> studentInfo = new ArrayList<Student>();
+		
 		public static void main(String[] args) throws IOException
 					{
 						readTxt();
@@ -19,7 +20,7 @@ public class Main
 								
 						String [] splitArray = line.split(" ");
 									
-								//add each to arraylist
+						studentInfo.add(new Student(splitArray [0], splitArray [1]));
 							}
 
 		}
