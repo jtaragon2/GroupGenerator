@@ -3,12 +3,13 @@ public class Student
 	{
 		private String firstName;
 		private String lastName;
-		int[] groups = new int[3];
+		int[] groups;
 
-		public Student(String fName, String lName)
+		public Student(String fName, String lName, int groupNum)
 			{
 				firstName = fName;
 				lastName = lName;
+				groups = new int[groupNum];
 			}
 
 		public String getFirstName()

@@ -6,7 +6,7 @@ public class GroupLists
 		static ArrayList<Student> Group2 = new ArrayList<Student>();
 		static ArrayList<Student> Group3 = new ArrayList<Student>();
 		
-		public static void addToGroups(ArrayList<Student> sList)
+		public static void addToGroupsRoundOne(ArrayList<Student> sList)
 			{
 				Group1 = new ArrayList<Student>();
 				Group2 = new ArrayList<Student>();
@@ -26,14 +26,17 @@ public class GroupLists
 								if (i == 0)
 									{
 										Group1.add(sList.get(counter));
+										sList.get(counter).groups[0]=1;
 									}
 								else if (i == 1)
 									{
 										Group2.add(sList.get(counter));
+										sList.get(counter).groups[0]=2;
 									}
 								else
 									{
 										Group3.add(sList.get(counter));
+										sList.get(counter).groups[0]=3;
 									}
 								counter++;
 							}
@@ -44,10 +47,12 @@ public class GroupLists
 						if (i == 0)
 							{
 								Group1.add(sList.get(counter));
+								sList.get(counter).groups[0]=1;
 							}
 						else if (i == 1)
 							{
 								Group2.add(sList.get(counter));
+								sList.get(counter).groups[0]=2;
 							}
 							counter++;
 					}
