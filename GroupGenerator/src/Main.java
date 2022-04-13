@@ -29,10 +29,6 @@ public class Main
 						
 						for (int i = 0; i < splitArray.length - 1; i += 2)
 							{
-
-								String line = myFile.nextLine();
-								
-						String [] splitArray = line.split(" ");
 									
 				
 								studentList.add(new Student(splitArray[i], splitArray[i + 1]));
