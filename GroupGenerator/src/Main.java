@@ -11,9 +11,7 @@ public class Main
 			{
 				readTxt("textFileGroups.txt");
 				GroupLists.addToGroupsRoundOne(studentList);
-				printLists(GroupLists.Group1);
-				printLists(GroupLists.Group2);
-				printLists(GroupLists.Group3);
+				
 			}
 
 		public static void readTxt(String s) throws IOException
