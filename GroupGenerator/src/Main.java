@@ -1,12 +1,15 @@
 import java.util.*;
 import java.io.*;
 
+
 public class Main
 	{
 
 		static ArrayList<Student> studentList = new ArrayList<Student>();
 		static int groupNumber = -1, groupSize = -1;
-
+		private static Scanner tanner = new Scanner(System.in);
+		
+		
 		public static void main(String[] args) throws IOException
 			{
 				readTxt("textFileGroups.txt");
@@ -16,6 +19,19 @@ public class Main
 				printLists(GroupLists.Group3);
 			}
 
+		public static void questions()
+		{
+			//ask number of groups
+			System.out.println("1) Do you want to make the median number of groups \nor \n2) A custom number?");
+			int answer = tanner.nextInt();
+			
+					System.out.println("There will be " + answer + " groups.");
+					groupNumber = answer;
+				
+			
+			System.out.println();
+		}
+		
 		public static void readTxt(String s) throws IOException
 			{
 				Scanner myFile = new Scanner(new File(s));
