@@ -33,7 +33,36 @@ public class GroupLists
 					}
 				else
 					{
+						int counter = 0;
+						if (Main.studentList.size() % Main.groupSize != 0)
+							{
+								Main.groupNumber = (Main.studentList.size() / Main.groupSize) + 1;
+							}
+						else
+							{
+								Main.groupNumber = Main.studentList.size() / Main.groupSize;
+							}
+						for (int i = 0; i < Main.groupNumber; i++)
+							{
 
+								if (counter >= sList.size())
+									{
+										System.out.println("Oops");
+										break;
+									}
+
+								for (int j = 0; j < sList.size() / Main.groupNumber; j++)
+									{
+										sList.get(counter).groups[0] = i + 1;
+										counter++;
+									}
+
+							}
+						for (int i = 0; i < sList.size() % Main.groupNumber; i++)
+							{
+								sList.get(counter).groups[0] = i + 1;
+								counter++;
+							}
 					}
 			}
 
