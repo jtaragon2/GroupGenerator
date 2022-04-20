@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class GroupLists
 	{
 		private static ArrayList<Student> targetList;
+
 		public static void addToGroupsRoundOne(ArrayList<Student> sList)
 			{
 				if (Main.groupNumber != -1)
@@ -38,10 +39,22 @@ public class GroupLists
 
 		public boolean checkGroups(Student s, int currentRound, int targetGroup)
 			{
-				targetList= new ArrayList<Student>();
-				for (int i = 0; i < Main.studentList.size(); i++)
+				targetList = new ArrayList<Student>();
+
+				for (Student stud : Main.studentList)
 					{
-						
+						if (stud.groups[currentRound] == targetGroup) targetList.add(stud);
+					}
+				for (Student stud : targetList)
+					{
+						if (stud.groups[0] == s.groups[0]) return false;
+					}
+				if (currentRound == 3)
+					{
+						for (Student stud : targetList)
+							{
+								if (stud.groups[1] == s.groups[1]) return false;
+							}
 					}
 				return true;
 			}
