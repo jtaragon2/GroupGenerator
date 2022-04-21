@@ -1,35 +1,33 @@
 import java.util.*;
 import java.io.*;
 
-
 public class Main
 	{
 
 		static ArrayList<Student> studentList = new ArrayList<Student>();
 		static int groupNumber = -1, groupSize = -1;
 		private static Scanner tanner = new Scanner(System.in);
-		
-		
+		private static ArrayList<Student> tudList = new ArrayList<Student>();
+
 		public static void main(String[] args) throws IOException
 			{
 				readTxt("textFileGroups.txt");
 				GroupLists.addToGroupsRoundOne(studentList);
-				
+				printLists(studentList, 0);
 			}
 
 		public static void questions()
-		{
-			//ask number of groups
-			System.out.println("1) Do you want to make the median number of groups \nor \n2) A custom number?");
-			int answer = tanner.nextInt();
-			
-					System.out.println("There will be " + answer + " groups.");
-					groupNumber = answer;
-				
-			
-			System.out.println();
-		}
-		
+			{
+				// ask number of groups
+				System.out.println("1) Do you want to make the median number of groups \nor \n2) A custom number?");
+				int answer = tanner.nextInt();
+
+				System.out.println("There will be " + answer + " groups.");
+				groupNumber = answer;
+
+				System.out.println();
+			}
+
 		public static void readTxt(String s) throws IOException
 			{
 				Scanner myFile = new Scanner(new File(s));
@@ -55,15 +53,31 @@ public class Main
 
 							}
 					}
-
+				if (statistics[0].equalsIgnoreCase("Number"))
+					{
+						groupSize = studentList.size() / groupNumber;
+						if (studentList.size() % groupNumber != 0)
+							{
+								groupSize++;
+							}
+					}
 			}
 
-		public static void printLists(List<Student> l)
+		public static void printLists(List<Student> l, int round)
 			{
-				System.out.println("\nGroup Size: " + l.size());
-				for (Student st : l)
+				for (int i = 0; i < groupSize; i++)
 					{
-						System.out.println(st.getLastName() + ", " + st.getFirstName());
+						tudList = new ArrayList<Student>();
+						for (Student s : l)
+							{
+								if (s.groups[round] == i) tudList.add(s);
+							}
+						System.out.println("\n\nGroup " + (i+1) + "\nRound " + (round+1));
+						for (Student s : l)
+							{
+								System.out.println(s.getLastName()+", "+s.getFirstName());
+							}
 					}
+
 			}
 	}

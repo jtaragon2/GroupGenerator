@@ -18,14 +18,14 @@ public class GroupLists
 										break;
 									}
 
-								for (int j = 0; j < sList.size() / Main.groupNumber; j++)
+								for (int j = 0; j < Main.groupSize-1; j++)
 									{
 										sList.get(counter).groups[0] = i + 1;
 										counter++;
 									}
 
 							}
-						for (int i = 0; i < sList.size() % Main.groupNumber; i++)
+						for (int i = 0; i < sList.size() % Main.groupSize; i++)
 							{
 								sList.get(counter).groups[0] = i + 1;
 								counter++;
